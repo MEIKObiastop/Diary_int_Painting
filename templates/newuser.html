@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+<hr>
+<h2 style="display: inline;">ユーザー登録</h2>
+<a href="{{ url_for('login') }}" style="margin-left: 20px;">戻る</a>
+<br>
+<br>
+<p>このアプリは簡単なログイン機能を使っています。
+    <br>安全のため、普段使っているパスワードとは別のものを設定してください。</p>
+<br>
+<form method="post" style="display:flex; flex-direction: column; gap:10px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+        <label for="username">ユーザー名</label>
+        <input type="text" name="username" id="username">
+    </div>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+        <label for="password">パスワード</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <br>
+    <button type="submit" style="width:100px; align-self:flex-start;">新規登録</button>
+</form>
+<br>
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+<br>
+<img src="{{ url_for('static', filename='top_image.png') }}"
+     alt="アプリ説明画像"
+     style="width:700px; max-width:100%; height:auto; ">
+
+{% endblock %}

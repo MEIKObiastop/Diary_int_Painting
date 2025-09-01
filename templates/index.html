@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+
+
+<form action="/posts" method="post">
+    <textarea name="diary_entry" class="diary_input" placeholder="きょうのできごと"></textarea><br>
+    <button type="submit" name="action" value="generate">イメージ画像を作る</button>
+    <button type="submit" name="action" value="plain">画像なしで投稿</button>
+</form>
+
+<br>
+<hr>
+<br>
+
+{% for post in posts_all %}
+    <div class="post">
+        <div class="post-bg" style="background-image:url('{{ post.image_path }}');"></div>
+        <div class="post-content">
+        <span class="date">{{ post.date.strftime('%Y-%m-%d %H:%M') }}</span>
+        <span class="content">{{ post.content }}</span>
+    </div>
+</div>
+{% endfor %}
+
+<br>
+<a href="/edit">編集</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/logout">ログアウト</a>
+<br>
+<hr>
+<br>
+<a href="/user_delete_confirm">ユーザー削除</a>
+
+{% endblock %}

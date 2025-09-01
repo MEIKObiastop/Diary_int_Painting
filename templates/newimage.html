@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+<hr>
+<img src="{{ image_path }}" alt="generated image">
+
+<form method="post" action="{{ url_for('confirm_image') }}">
+    <input type="hidden" name="post_id" value="{{ post_id }}">
+    <input type="hidden" name="content" value="{{ content }}">
+    
+    <!-- 確定ボタンは confirm_image に POST -->
+    <button type="submit" name="action" value="confirm">この画像で投稿</button>
+    
+    <!-- やり直しボタンは newimage に GET -->
+    <button type="submit" 
+            formaction="{{ url_for('newimage') }}" 
+            formmethod="get" 
+            name="content" 
+            value="{{ content }}">
+        やり直す
+    </button>
+</form>
+
+{% endblock %}

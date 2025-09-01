@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form id="redirectForm" method="post" action="{{ url_for('newimage') }}">
+    <input type="hidden" name="content" value="{{ content }}">
+</form>
+<script>
+document.getElementById('redirectForm').submit();
+</script>
+{% endblock %}

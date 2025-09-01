@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+<hr>
+<h2 style="display: inline;">ログイン</h2>
+<a href="{{ url_for('newuser') }}" style="margin-left: 10px;">新規登録はこちら</a>
+<br><br>
+
+<form method="post" class="login-form">
+    <div class="form-row">
+        <label for="username">ユーザー名</label>
+        <input type="text" name="username" id="username">
+    </div>
+
+    <div class="form-row">
+        <label for="password">パスワード</label>
+        <input type="password" name="password" id="password">
+    </div>
+
+    <button type="submit">ログイン</button>
+</form>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+<br>
+<img src="{{ url_for('static', filename='top_image.png') }}"
+     alt="アプリ説明画像"
+     style="width:700px; max-width:100%; height:auto;">
+{% endblock %}

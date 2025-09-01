@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+
+<h2>アカウントを削除します</h2>
+<p>一度削除したデータを戻すことはできません。</p>
+<p>本当に削除しますか？</p>
+
+<form method="post" action="{{ url_for('user_delete') }}">
+    <button type="submit">はい、削除する</button>
+
+    <br><br>
+
+    <a href="{{ url_for('index') }}">戻る</a>
+</form>
+
+{% endblock %}

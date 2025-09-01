@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Diary into Painting</h1>
+
+<h2>日記を削除できます</h2>
+
+<hr>
+<a href="{{ url_for('index') }}">戻る</a>
+<hr>
+<br>
+
+{% for post in posts_all %}
+<div class="post">
+    <a href="{{ url_for('delete', post_id=post.id) }}">削除</a>
+    <span class="content">{{ post.content }}</span>
+    <span class="date">{{ post.date_created.strftime('%Y-%m-%d %H:%M') }}</span>
+</div>
+{% endfor %}
+
+{% endblock %}
