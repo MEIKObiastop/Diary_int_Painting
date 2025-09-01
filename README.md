@@ -8,7 +8,7 @@
 
 ## Diary into Painting 制作に寄せて
 「今日の日記の内容に合わせて背景が自動的に変わったら楽しいんじゃないかな～」という発想から作成したアプリです。  
-"自分で選んだ"という満足感を高めるため、ユーザーが画像を気に入らなければボタン一つで再生成できる。
+"自分で選んだ"という満足感を高めるため、ユーザーが画像を気に入らなければボタン一つで再生成できます。
 自然言語解析API(HuggingFace経由で無料で使用可能なもの)を見つけることができなかったため、  
 今回は [ONE LINE DIARY](https://github.com/MEIKObiastop/ONE_LINE_DIARY) で使用した`.csv`を流用しました。  
 画像生成モデルは [ByteDance/SDXL-Lightning](https://huggingface.co/ByteDance/SDXL-Lightning)(Hugging Face API) を使用しています。
